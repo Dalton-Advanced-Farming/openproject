@@ -11,7 +11,7 @@ volumes:
 x-op-restart-policy: &restart_policy
   restart: unless-stopped
 x-op-image: &image
-  image: openproject/community:${TAG:-10}
+  image: dalton/project:latest
 x-op-app: &app
   <<: *image
   <<: *restart_policy
@@ -50,7 +50,7 @@ services:
     <<: *restart_policy
     command: "./docker/proxy"
     ports:
-      - "8080:80"
+      - "80:80"
     environment:
       - APP_HOST=web
       - "OPENPROJECT_RAILS__RELATIVE__URL__ROOT=${OPENPROJECT_RAILS__RELATIVE__URL__ROOT:-}"

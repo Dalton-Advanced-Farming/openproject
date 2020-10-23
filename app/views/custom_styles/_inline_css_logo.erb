@@ -29,7 +29,7 @@ See docs/COPYRIGHT.rdoc for more details.
 
 <% cache(CustomStyle.current) do %>
   <style type="text/css">
-    <% logo_url = asset_path("logo_openproject_white_big.png") %>
+    <% logo_url = asset_path("logo_daltonproject_white_big.png") %>
     <% if EnterpriseToken.allows_to?(:define_custom_style) && CustomStyle.try(:current).present? %>
       <%
         if CustomStyle.current.logo.present?
